@@ -5,11 +5,11 @@ import java.util.List;
 import com.wb.io.Entrada;
 import com.wb.modelo.Produto;
 
-public class CadastroProduto extends Cadastro {
+public class CadProduto extends Cad {
 	private List<Produto> produtos;
 	private Entrada entrada;
 	
-	public CadastroProduto(List<Produto> produtos) {
+	public CadProduto(List<Produto> produtos) {
 		this.produtos = produtos;
 		this.entrada = new Entrada();
 	}

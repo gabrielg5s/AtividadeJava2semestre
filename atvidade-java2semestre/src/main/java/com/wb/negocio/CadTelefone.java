@@ -5,12 +5,12 @@ import java.util.List;
 import com.wb.io.Entrada;
 import com.wb.modelo.Telefone;
 
-public class CadastroTelefone extends Cadastro 
+public class CadTelefone extends Cad 
 {
 		private List<Telefone> telefones;
 		private Entrada entrada;
 
-		public CadastroTelefone(List<Telefone> telefones) 
+		public CadTelefone(List<Telefone> telefones) 
 			{
 				this.telefones = telefones;
 				this.entrada = new Entrada();

@@ -7,12 +7,12 @@ import java.util.List;
 import com.wb.io.Entrada;
 import com.wb.modelo.RG;
 
-public class CadastroRg extends Cadastro 
+public class CadRg extends Cad 
         {
             private List<RG> rgs;
             private Entrada entrada;
 
-            public CadastroRg(List<RG> rgs) {
+            public CadRg(List<RG> rgs) {
                 this.rgs = rgs;
                 this.entrada = new Entrada();
             }

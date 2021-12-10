@@ -7,11 +7,11 @@ import com.wb.io.Entrada;
 import com.wb.modelo.CPF;
 import com.wb.modelo.Cliente;
 
-public class CadastroCpf extends Cadastro {
+public class CadCpf extends Cad {
     private Cliente cliente;
 	private Entrada entrada;
 
-    public CadastroCpf(Cliente cliente) {
+    public CadCpf(Cliente cliente) {
         this.cliente = cliente;
         this.entrada = new Entrada();
     }

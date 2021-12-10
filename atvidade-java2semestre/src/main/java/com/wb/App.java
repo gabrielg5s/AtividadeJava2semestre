@@ -15,10 +15,10 @@ import com.wb.modelo.Telefone;
 import com.wb.negocio.Searchj;
 import com.wb.negocio.SearchCliente;
 import com.wb.negocio.SearchProduto;
-import com.wb.negocio.Cadastro;
-import com.wb.negocio.CadastroCliente;
-import com.wb.negocio.CadastroConsumo;
-import com.wb.negocio.CadastroProduto;
+import com.wb.negocio.Cad;
+import com.wb.negocio.CadCliente;
+import com.wb.negocio.CadConsumo;
+import com.wb.negocio.CadProduto;
 import com.wb.negocio.Listagem;
 import com.wb.negocio.ListConsumo;
 import com.wb.negocio.ListAllClientes;
@@ -549,7 +549,7 @@ public class App {
 								int opCliente = entradaCliente.receberNumeroInteiro();
 								switch (opCliente) {
 									case 1:
-										Cadastro cadastro = new CadastroCliente(empresa.getClientes());
+										Cad cadastro = new CadCliente(empresa.getClientes());
 										cadastro.cadastrar();
 										break;
 									case 2:
@@ -579,7 +579,7 @@ public class App {
 				switch (opProd) 
 						{
 								case 1:
-									Cadastro cadastroProduto = new CadastroProduto(empresa.getProdutos());
+									Cad cadastroProduto = new CadProduto(empresa.getProdutos());
 									cadastroProduto.cadastrar();
 									break;
 								case 2:
@@ -609,7 +609,7 @@ public class App {
 				switch (operacaoConsumo) 
 						{
 								case 1:
-									Cadastro cadastroConsumo = new CadastroConsumo(empresa.getConsumos(), empresa.getClientes(), empresa.getProdutos());
+									Cad cadastroConsumo = new CadConsumo(empresa.getConsumos(), empresa.getClientes(), empresa.getProdutos());
 									cadastroConsumo.cadastrar();
 									break;
 								case 2:

@@ -109,7 +109,7 @@ public class EditCliente extends Edit{
                                             edicaoTel.editar();
                                             break;
                                         case 2:
-                                            Cadastro cadastroTel = new CadastroTelefone(cliente.getTelefones());
+                                            Cad cadastroTel = new CadTelefone(cliente.getTelefones());
                                             cadastroTel.cadastrar();
                                             break;
                                         case 3:

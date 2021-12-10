@@ -8,14 +8,14 @@ import com.wb.modelo.Cliente;
 import com.wb.modelo.RG;
 import com.wb.modelo.Telefone;
 
-public class CadastroCliente extends Cadastro {
+public class CadCliente extends Cad {
 	private List<Cliente> clientes;
 	private List<Telefone> telefones;
 	private List<RG> rgs;
 	private CPF cpf;
 	private Entrada entrada;
 
-	public CadastroCliente(List<Cliente> clientes) {
+	public CadCliente(List<Cliente> clientes) {
 		this.clientes = clientes;
 		this.entrada = new Entrada();
 	}
@@ -61,10 +61,10 @@ public class CadastroCliente extends Cadastro {
 
 			Cliente cliente = new Cliente(nome, nomeSocial, genero, cpf, telefones, rgs);
 	
-			Cadastro cadastroCpf = new CadastroCpf(cliente);
+			Cad cadastroCpf = new CadCpf(cliente);
 			cadastroCpf.cadastrar();
 	
-			Cadastro cadastroRg = new CadastroRg(cliente.getRgs());
+			Cad cadastroRg = new CadRg(cliente.getRgs());
 			cadastroRg.cadastrar();
 
 		int flagRg = 1;
@@ -90,7 +90,7 @@ public class CadastroCliente extends Cadastro {
 
 		}
 
-		Cadastro cadastroTelefone = new CadastroTelefone(cliente.getTelefones());
+		Cad cadastroTelefone = new CadTelefone(cliente.getTelefones());
 		cadastroTelefone.cadastrar();
 		
 		int flag = 1;

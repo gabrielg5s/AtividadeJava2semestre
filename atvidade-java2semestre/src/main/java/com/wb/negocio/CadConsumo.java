@@ -9,7 +9,7 @@ import com.wb.modelo.Consumo;
 import com.wb.modelo.Produto;
 
 
-public class CadastroConsumo extends Cadastro {
+public class CadConsumo extends Cad {
 
 	private List<Consumo> consumos = new ArrayList<Consumo>();
 	private List<Cliente> clientes;
@@ -17,7 +17,7 @@ public class CadastroConsumo extends Cadastro {
 	private List<Produto> todosProdutos;
 	private Entrada entrada;
 	
-	public CadastroConsumo(List<Consumo> consumos, List<Cliente> clientes, List<Produto> todosProdutos) {
+	public CadConsumo(List<Consumo> consumos, List<Cliente> clientes, List<Produto> todosProdutos) {
 		this.consumos = consumos;
 		this.clientes = clientes;
 		this.todosProdutos = todosProdutos;
@@ -48,7 +48,7 @@ public class CadastroConsumo extends Cadastro {
 						execucao = false;
 						break;
 					case 2:
-						Cadastro cadastroCliente = new CadastroCliente(clientes);
+						Cad cadastroCliente = new CadCliente(clientes);
 						cadastroCliente.cadastrar();
 						cliente = clientes.get(clientes.size() - 1);
 						cpf = cliente.getCpf().getValor();
