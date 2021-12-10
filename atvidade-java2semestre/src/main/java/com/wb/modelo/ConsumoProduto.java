@@ -1,17 +1,17 @@
 package com.wb.modelo;
 
 public class ConsumoProduto implements Comparable<ConsumoProduto> {
-    public Integer qntConsumo;
+    public Integer qantConsumo;
     public String nome;
 
-    public ConsumoProduto(Integer qntConsumo, String nome) {
-        this.qntConsumo = qntConsumo;
+    public ConsumoProduto(Integer qantConsumo, String nome) {
+        this.qantConsumo = qantConsumo;
         this.nome = nome;
     }
 
     @Override
     public int compareTo(ConsumoProduto o) {
-        return o.qntConsumo.compareTo(this.qntConsumo);
+        return o.qantConsumo.compareTo(this.qantConsumo);
     }
     
 }

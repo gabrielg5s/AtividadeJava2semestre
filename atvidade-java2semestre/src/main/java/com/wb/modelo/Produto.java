@@ -19,6 +19,12 @@ public class Produto implements Comparable<Produto> {
 		this.dataCadastro = LocalDate.now();
 	}
 	
+	public Produto(String nome2, String string, String categoria2, String string2, String tipo2) {
+    }
+
+    public Produto(String nome2, Double preco2, String categoria2, String codigo2, String tipo2) {
+	}
+
 	public String getNome() {
 		return nome;
 	}

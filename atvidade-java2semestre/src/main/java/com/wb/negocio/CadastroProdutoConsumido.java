@@ -15,16 +15,19 @@ public class CadastroProdutoConsumido extends Cadastro{
 	}
 
 	@Override
-	public void cadastrar() {
+	public void cadastrar() 
+	{
 		System.out.println("\nADICIONAR PRODUTO: ");
 		System.out.print("\nProduto: ");
 		entrada = new Entrada();
 		String produto = entrada.receberTexto();
+
 		System.out.print("Preço: ");
 		entrada = new Entrada();
 		Double preco = entrada.receberNumeroDouble();
 		ProdutoConsumido prod = new ProdutoConsumido(produto, preco);
 		this.produtosConsumidos.add(prod);
+		
 		System.out.println("\nProduto adicionado!\n");
 	}
 }

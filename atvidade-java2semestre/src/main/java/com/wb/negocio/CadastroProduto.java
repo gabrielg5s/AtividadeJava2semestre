@@ -15,60 +15,93 @@ public class CadastroProduto extends Cadastro {
 	}
 
 	@Override
-	public void cadastrar() {
-		System.out.println("\nO que deseja?");
-		System.out.println("\nInforme: ");
-		System.out.print("\nTipo\n\n 1- Produto\n 2- Serviço\n");
-
+	public void cadastrar() 
+	{
+		System.out.println("\nCadastro de produtos e serviços");
 		String tipo = "";
-		Entrada entradaTipo = new Entrada();
-		System.out.print("\n");
-		int operacao = entradaTipo.receberNumeroInteiro();
-		
-		switch (operacao) {
-			case 1:
-				tipo = "Produto";
-				break;
-			case 2:
-				tipo = "Serviço";
-				break;
-			default:
-				System.out.println("\nOperação inválida!\n");
-		}
-		System.out.print("\n Nome: ");
-		String nome = entrada.receberTexto();
-		System.out.print(" Preço: R$ ");
-		Double preco = entrada.receberNumeroDouble();
-		System.out.print(" Código: ");
-		Entrada entradaCod = new Entrada();
-		int codigo = entradaCod.receberNumeroInteiro();
-		System.out.print("\nCategoria\n\n  - Infantil\n  - Adulto\n  - Todas as idades\n");
-		Entrada entradaCategoria = new Entrada();
-		System.out.print("\n");
-		int c = entradaCategoria.receberNumeroInteiro();
 		String categoria = "";
+				
+				boolean exec = true;
+		while (exec) 
+			{
+				System.out.print("\n1 -Produto\n2 -Serviço\n");
+				
+				Entrada entradaTipo = new Entrada();
+				System.out.print("\nInforme o tipo: ");
+				String operacao = entradaTipo.receberTexto();
+				switch (operacao) 
+					{
+						case "1":
+							tipo = "Produto";
+							exec = false;
+							break;
+						case "2":
+							tipo = "Serviço";
+							exec = false;
+							break;
+						default:
+							System.out.println("\ninválido!");
+					}
+			}
 
-		switch (c) {
-			case 1:
-				categoria = "Infantil";				
-				break;
-			case 2:
-				categoria = "Adulto";				
-				break;
-			case 3:
-				categoria = "Todas as Idades";				
-				break;
-			default:
-				System.out.println("\nOperação inválida!\n");
+			Double preco = 0.0;
+			String codigo = "0";
+			System.out.print("\nℹ️  Nome: ");
+			String nome = entrada.receberTexto();
+			boolean execPreco = true;
+			while (execPreco) 
+				{
+					try 
+						{
+							Entrada entradaPreco = new Entrada();
+							System.out.print("ℹ️  Preço: R$ ");
+							String p = entradaPreco.receberTexto();
+							preco = Double.parseDouble(p);
+							System.out.print("ℹ️  Código: ");
+							Entrada entradaCod = new Entrada();
+							codigo = entradaCod.receberTexto();
+							execPreco = false;
+						} 
+					catch (Exception e) 
+						{
+							System.out.println("\nPreço inválido!");
+							System.out.println("\n Exemplo a seguir: 42.00");
+						}
+				}
+
+			boolean execCategoria = true;
+			while (execCategoria) 
+				{
+					System.out.print("\n🔵 Categoria\n\n1 -Adulto\n2️- Infantil\n3 -Todas as Idades\n");
+					Entrada entradaCategoria = new Entrada();
+					System.out.print("\nSelecione a opção: ");
+					String c = entradaCategoria.receberTexto();
+					switch (c) 
+						{
+							case "1":
+								categoria = "Adulto";
+								execCategoria = false;
+								break;
+							case "2":
+								categoria = "Infantil";
+								execCategoria = false;
+								break;
+							case "3":
+								categoria = "Todas as Idades";
+								execCategoria = false;
+								break;
+							default:
+								System.out.println("\ninválido!");
+						}
+				}
+
+				Produto produto = new Produto(nome, preco, categoria, codigo, tipo);
+				this.produtos.add(produto);
+				PrintCliente impressaoProd = new PrintProdutoCliente(produto);
+				impressaoProd.imprimir();
+				System.out.println("\ncadastrado com sucesso!");
+			
+			}
+		
 		}
-
-		Produto produto = new Produto(nome, preco, categoria, codigo, tipo);
-		this.produtos.add(produto);
-		ImpressaoCLI impressaoProd = new ImpressaoCLIProduto(produto);
-		impressaoProd.imprimir();
-		System.out.println("\nProduto/Serviço cadastrado com sucesso!");
 		
-		
-	}
-
-}

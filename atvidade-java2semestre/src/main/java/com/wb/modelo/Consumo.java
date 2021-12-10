@@ -25,7 +25,7 @@ public class Consumo {
     }
     
     public Consumo(List<ProdutoConsumido> produtosConsumidos, Double precoTotal,
-            String nomeCliente, CPF cpfCliente) {
+            String nomeCliente, CPF cpfCliente) {                
         this.precoTotal = precoTotal;
         this.nomeCliente = nomeCliente;
         this.dataConsumo = LocalDate.now();
